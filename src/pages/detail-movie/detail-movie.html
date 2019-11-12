@@ -1,0 +1,61 @@
+<!--
+  Generated template for the DetailMoviePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{detail.original_title}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)=goToMenu()>
+        <ion-icon name="home"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card>
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="{{imgPath + detail.poster_path}}">
+      </ion-avatar>
+      <h2>{{detail.original_title}}</h2>
+    </ion-item>
+    <img src="{{imgPath + detail.poster_path}}">
+    <ion-card-content>
+      <h2>Release Date</h2>
+      <p>{{detail.release_date}}</p>
+      <h2>Vote Average</h2>
+      <p>{{detail.vote_average}} <ion-icon name="thumbs-up"></ion-icon>
+      </p>
+      <ion-buttons end (click)="goToVideo(detail.id)">
+        <button ion-button small icon-only clear>
+          <ion-icon name="videocam">&nbsp; Video Trailer</ion-icon>
+        </button>
+      </ion-buttons>
+      <h2>Overview</h2>
+      <p>{{detail.overview}}</p>
+      <div text-center>
+
+        <button ion-button small icon-only clear (click)="playtext(detail.overview)">
+          <ion-icon name="mic">&nbsp; LISTEN</ion-icon>
+        </button>
+        <button ion-button color="danger" small icon-only clear (click)="Stoptext()">
+          <ion-icon name="mic-off">&nbsp; STOP</ion-icon>
+        </button>
+      </div>
+      <ion-fab below right edge>
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab (click)="share()"><ion-icon name="md-share"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

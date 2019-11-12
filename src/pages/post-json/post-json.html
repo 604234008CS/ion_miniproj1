@@ -1,0 +1,40 @@
+<!--
+  Generated template for the PostJsonPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>PostJson</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label floating>ชื่อ :</ion-label>
+    <ion-input type="text" [(ngModel)]="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>นามสกุล :</ion-label>
+    <ion-input type="text" [(ngModel)]="surname"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>อีเมล :</ion-label>
+    <ion-input type="text" [(ngModel)]="email"></ion-input>
+  </ion-item>
+
+  <button ion-button block (click)="postJasonData(name,surname,email)">
+    <ion-icon name="md-body"></ion-icon> &nbsp;ลงทะเบียน
+  </button>
+
+  <ion-card>
+    <ion-card-content>
+      {{returnMsg}}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
